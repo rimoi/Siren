@@ -14,4 +14,4 @@ php bin/console doctrine:migrations:migrate
 # importer les données du fichier .csv dans la base de données
 php bin/console app:update-sirene
 ```
-Après ça rdv sur la page index.php/search/siren
+Après ça rdv sur la page `localhost/Siren/public/index.php/search/siren`
