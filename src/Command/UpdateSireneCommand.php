@@ -36,7 +36,7 @@ class UpdateSireneCommand extends Command
          */
 
         try {
-            $reader = Reader::createFromPath(dirname(__DIR__).'/Data/Sirene.csv');
+            $reader = Reader::createFromPath(dirname(__DIR__).'/Data/Siren.csv');
             $results = $reader->fetchAssoc();
             foreach ($results as $row) {
                 $sirene = (new Sirene())
@@ -51,6 +51,8 @@ class UpdateSireneCommand extends Command
             $this->entityManager->flush();
         } Catch (\Exception $e) {
             // J'envoie un message au (slack, ...) pour informé que la mise à jour a échoué.
+            echo "Une erreur est survenue : " . $e->getMessage();
+            exit;
         }
 
 
